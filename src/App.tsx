@@ -7,6 +7,7 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
+
       Hello Worlds
     </ThemeProvider>
   )
