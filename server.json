@@ -7,46 +7,6 @@
       "category": "Venda",
       "price": 14000,
       "createdAt": "2022-08-09T00:04:58.396Z"
-    },
-    {
-      "id": 2,
-      "description": "Hamburger",
-      "type": "outcome",
-      "category": "Alimentação",
-      "price": 50,
-      "createdAt": "2022-08-09T00:04:58.396Z"
-    },
-    {
-      "id": 3,
-      "description": "Desenvolvimento de site",
-      "type": "income",
-      "category": "Venda",
-      "price": 14000,
-      "createdAt": "2022-08-09T00:04:58.396Z"
-    },
-    {
-      "id": 4,
-      "description": "Curso",
-      "type": "outcome",
-      "category": "Compras",
-      "price": 2500,
-      "createdAt": "2022-08-09T00:04:58.396Z"
-    },
-    {
-      "category": "Venda",
-      "description": "Desenvolvimento de app",
-      "price": 10000,
-      "type": "income",
-      "createdAt": "2022-08-09T01:43:22.518Z",
-      "id": 5
-    },
-    {
-      "category": "Alimentacao",
-      "description": "Coxinha",
-      "price": 100,
-      "type": "outcome",
-      "createdAt": "2022-08-09T01:52:38.205Z",
-      "id": 6
     }
   ]
 }

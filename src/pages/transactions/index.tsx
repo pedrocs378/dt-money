@@ -3,14 +3,15 @@ import { useTransactions } from '../../contexts/transactions-context'
 import { Header } from '../../components/header'
 import { Summary } from '../../components/summary'
 
-import { dateFormatter, priceFormatter } from '../../utils/formatter'
-
 import { SearchForm } from './components/search-form'
+import { TransactionTableItem } from './components/transaction-table-item'
+
+import { dateFormatter, priceFormatter } from '../../utils/formatter'
 
 import * as S from './styles'
 
 export function Transactions() {
-  const { transactions } = useTransactions()
+  const transactions = useTransactions()
 
   return (
     <div>
@@ -24,19 +25,18 @@ export function Transactions() {
           <tbody>
             {transactions.map((transaction) => {
               return (
-                <tr key={transaction.id}>
-                  <td width="50%">{transaction.description}</td>
-                  <td>
-                    <S.PriceHighlight variant={transaction.type}>
-                      {transaction.type === 'outcome' && '- '}
-                      {priceFormatter.format(transaction.price)}
-                    </S.PriceHighlight>
-                  </td>
-                  <td>{transaction.category}</td>
-                  <td>
-                    {dateFormatter.format(new Date(transaction.createdAt))}
-                  </td>
-                </tr>
+                <TransactionTableItem
+                  key={transaction.id}
+                  transaction={{
+                    description: transaction.description,
+                    type: transaction.type,
+                    price: priceFormatter.format(transaction.price),
+                    category: transaction.category,
+                    createdAt: dateFormatter.format(
+                      new Date(transaction.createdAt),
+                    ),
+                  }}
+                />
               )
             })}
           </tbody>

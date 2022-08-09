@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import { useTransactions } from '../contexts/transactions-context'
 
 export function useSummary() {
-  const { transactions } = useTransactions()
+  const transactions = useTransactions()
 
   const summary = useMemo(() => {
     return transactions.reduce(

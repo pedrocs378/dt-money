@@ -80,6 +80,12 @@ export const CloseButton = styled(Dialog.Close)`
   font-size: 0;
 
   color: ${({ theme }) => theme.colors['gray-500']};
+
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors['gray-300']};
+  }
 `
 
 export const TransactionType = styled(RadioGroup.Root)`
