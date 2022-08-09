@@ -59,7 +59,11 @@ export const Content = styled(Dialog.Content)`
 
       transition: all 0.2s ease-in-out;
 
-      &:hover {
+      &:disabled {
+        opacity: 0.6;
+      }
+
+      &:not(:disabled):hover {
         background-color: ${({ theme }) => theme.colors['green-700']};
       }
     }

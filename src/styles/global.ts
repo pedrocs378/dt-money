@@ -24,5 +24,9 @@ export const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 `
