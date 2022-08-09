@@ -12,7 +12,7 @@ const newTransactionFormSchema = zod.object({
   description: zod.string(),
   price: zod.number(),
   category: zod.string(),
-  type: zod.enum(['income', 'outcome'])
+  type: zod.enum(['income', 'outcome']),
 })
 
 type NewTransactionFormInputs = zod.infer<typeof newTransactionFormSchema>
@@ -25,12 +25,12 @@ export function NewTransactionModal() {
     handleSubmit,
     formState: { isSubmitting },
     reset,
-    control
+    control,
   } = useForm<NewTransactionFormInputs>({
     resolver: zodResolver(newTransactionFormSchema),
     defaultValues: {
-      type: 'income'
-    }
+      type: 'income',
+    },
   })
 
   async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
@@ -75,7 +75,11 @@ export function NewTransactionModal() {
             name="type"
             render={({ field }) => {
               return (
-                <S.TransactionType onValueChange={field.onChange} onBlur={field.onBlur} value={field.value}>
+                <S.TransactionType
+                  onValueChange={field.onChange}
+                  onBlur={field.onBlur}
+                  value={field.value}
+                >
                   <S.TransactionTypeButton value="income" variant="income">
                     <ArrowCircleUp size={24} />
                     Entrada

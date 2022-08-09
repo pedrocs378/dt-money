@@ -8,7 +8,7 @@ import { useTransactions } from '../../../../contexts/transactions-context'
 import * as S from './styles'
 
 const searchFormSchema = zod.object({
-  query: zod.string()
+  query: zod.string(),
 })
 
 type SearchFormInputs = zod.infer<typeof searchFormSchema>
@@ -16,8 +16,12 @@ type SearchFormInputs = zod.infer<typeof searchFormSchema>
 export function SearchForm() {
   const { fetchTransactions } = useTransactions()
 
-  const { register, handleSubmit, formState: { isSubmitting } } = useForm<SearchFormInputs>({
-    resolver: zodResolver(searchFormSchema)
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<SearchFormInputs>({
+    resolver: zodResolver(searchFormSchema),
   })
 
   async function handleSearchTransactions(data: SearchFormInputs) {

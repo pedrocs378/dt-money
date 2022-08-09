@@ -1,11 +1,11 @@
-import { useTransactions } from '../../contexts/transactions-context';
+import { useTransactions } from '../../contexts/transactions-context'
 
-import { Header } from '../../components/header';
-import { Summary } from '../../components/summary';
+import { Header } from '../../components/header'
+import { Summary } from '../../components/summary'
 
-import { dateFormatter, priceFormatter } from '../../utils/formatter';
+import { dateFormatter, priceFormatter } from '../../utils/formatter'
 
-import { SearchForm } from './components/search-form';
+import { SearchForm } from './components/search-form'
 
 import * as S from './styles'
 
@@ -33,7 +33,9 @@ export function Transactions() {
                     </S.PriceHighlight>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{dateFormatter.format(new Date(transaction.createdAt))}</td>
+                  <td>
+                    {dateFormatter.format(new Date(transaction.createdAt))}
+                  </td>
                 </tr>
               )
             })}

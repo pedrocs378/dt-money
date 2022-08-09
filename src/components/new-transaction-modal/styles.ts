@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import * as RadioGroup from '@radix-ui/react-radio-group';
+import styled from 'styled-components'
+import * as RadioGroup from '@radix-ui/react-radio-group'
 
 import * as Dialog from '@radix-ui/react-dialog'
 
@@ -93,7 +93,9 @@ type TransactionTypeButtonProps = {
   variant: 'income' | 'outcome'
 }
 
-export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButtonProps>`
+export const TransactionTypeButton = styled(
+  RadioGroup.Item,
+)<TransactionTypeButtonProps>`
   background-color: ${({ theme }) => theme.colors['gray-700']};
   color: ${({ theme }) => theme.colors['gray-300']};
   padding: 1rem;
@@ -108,7 +110,10 @@ export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButt
   transition: all 0.2s ease-in-out;
 
   svg {
-    color: ${({ variant, theme }) => variant === 'income' ? theme.colors['green-300'] : theme.colors['red-300']};
+    color: ${({ variant, theme }) =>
+      variant === 'income'
+        ? theme.colors['green-300']
+        : theme.colors['red-300']};
   }
 
   &[data-state='unchecked']:hover {
@@ -117,7 +122,10 @@ export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButt
 
   &[data-state='checked'] {
     color: ${({ theme }) => theme.colors.white};
-    background-color: ${({ variant, theme }) => variant === 'income' ? theme.colors['green-500'] : theme.colors['red-700']};
+    background-color: ${({ variant, theme }) =>
+      variant === 'income'
+        ? theme.colors['green-500']
+        : theme.colors['red-700']};
 
     svg {
       color: ${({ theme }) => theme.colors.white};

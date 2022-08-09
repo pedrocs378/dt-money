@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const TransactionsContainer = styled.main`
   max-width: 1120px;
@@ -34,5 +34,6 @@ type PriceHighlightProps = {
 }
 
 export const PriceHighlight = styled.span<PriceHighlightProps>`
-  color: ${({ variant, theme }) => variant === 'income' ? theme.colors['green-300'] : theme.colors['red-300']};
+  color: ${({ variant, theme }) =>
+    variant === 'income' ? theme.colors['green-300'] : theme.colors['red-300']};
 `
